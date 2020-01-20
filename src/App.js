@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import SetStateDemo from "./component/SetStateDemo";
 import UseStateDemo from "./component/UseStateDemo";
-import { WithDraggableDemo01 } from "./component/WithDraggable";
+import WithDraggable from "./component/WithDraggable";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <div>
         <Link to="/SetStateDemo"> SetStateDemo </Link>
         <Link to="/UseStateDemo"> UseStateDemo </Link>
-        <Link to="/withDraggableDemo01">withDraggableDemo01</Link>
+        <Link to="/withDraggable">withDraggable</Link>
       </div>
       <Switch>
         <Route
@@ -27,10 +27,10 @@ const App = () => {
           component={UseStateDemo}
         />
         <Route
-          key="WithDraggableDemo01"
-          path="/WithDraggableDemo01"
+          key="WithDraggable"
+          path="/WithDraggable"
           exact={true}
-          component={WithDraggableDemo01}
+          component={WithDraggable}
         />
       </Switch>
     </Router>
