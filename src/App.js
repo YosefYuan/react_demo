@@ -5,6 +5,7 @@ import SetStateDemo from "./component/SetStateDemo";
 import UseStateDemo from "./component/UseStateDemo";
 import WithDraggable from "./component/WithDraggable";
 import DragProps from "./component/DragProps";
+import UseDrag from "./component/UseDrag";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Link to="/UseStateDemo"> UseStateDemo </Link>
         <Link to="/withDraggable">withDraggable</Link>
         <Link to="/DragProps">DragProps</Link>
+        <Link to="/UseDrag">UseDrag</Link>
       </div>
       <Switch>
         <Route
@@ -40,6 +42,7 @@ const App = () => {
           exact={true}
           component={DragProps}
         />
+        <Route key="UseDrag" path="/UseDrag" exact={true} component={UseDrag} />
       </Switch>
     </Router>
   );
