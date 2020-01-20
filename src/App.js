@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import SetStateDemo from "./component/SetStateDemo";
 import UseStateDemo from "./component/UseStateDemo";
 import WithDraggable from "./component/WithDraggable";
+import DragProps from "./component/DragProps";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Link to="/SetStateDemo"> SetStateDemo </Link>
         <Link to="/UseStateDemo"> UseStateDemo </Link>
         <Link to="/withDraggable">withDraggable</Link>
+        <Link to="/DragProps">DragProps</Link>
       </div>
       <Switch>
         <Route
@@ -31,6 +33,12 @@ const App = () => {
           path="/WithDraggable"
           exact={true}
           component={WithDraggable}
+        />
+        <Route
+          key="DragProps"
+          path="/DragProps"
+          exact={true}
+          component={DragProps}
         />
       </Switch>
     </Router>
