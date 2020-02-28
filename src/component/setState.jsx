@@ -1,24 +1,12 @@
 import React from 'react';
 
-class StateDemo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      origin: 123
-    };
-  }
-
+class Buggy extends React.Component {
+  state = { greeting: 'Welcome' };
   componentDidMount() {
-    const { test } = this.props;
-    console.log('test', test);
-    this.setState((state, props) => ({
-      origin: state.origin + props.test
-    }));
+    throw new Error('An error has occured in Buggy component!');
   }
-
   render() {
-    return <div>{this.state.origin}</div>;
+    return <h2>{this.state.greeting}</h2>;
   }
 }
-
-export default StateDemo;
+export default Buggy;
