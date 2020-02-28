@@ -1,30 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.el = document.createElement('div');
-    this.someRoot = null;
-  }
+import React, { useState } from 'react';
 
-  componentDidMount() {
-    this.someRoot = this.createElement('div');
-    this.someRoot.appendChild(this.el);
-  }
+export const UserDisplay = ({ name, address, age }) => {
+  const [user, setUser] = useState({
+    name: 'myname',
+    age: 10,
+    address: '0000 onestreet'
+  });
 
-  createElement() {
-    const ele = document.createElement('div');
-    ele.id = 'test';
-    document.body.appendChild(ele);
-    return ele;
-  }
-
-  componentWillUnmount() {
-    this.someRoot.removeChild(this.el);
-  }
-
-  render() {
-    return ReactDOM.createPortal(this.props.children, this.el);
-  }
-}
-export default App;
+  return (
+    <>
+      <div>
+        <div class='label'>Name:</div>
+        <div>{user.name}</div>
+      </div>
+      <div>
+        <div class='label'>Address:</div>
+        <div>{user.address}</div>
+      </div>
+      <div>
+        <div class='label'>Age:</div>
+        <div>{user.age}</div>
+      </div>
+      <button onClick={() => setUser({ name: 'name changed' })}>
+        Click me
+      </button>
+    </>
+  );
+};
